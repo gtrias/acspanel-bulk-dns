@@ -1,0 +1,37 @@
+<html>
+    <head></head>
+    <body>
+        Asignament massiu de dnsrecord a tots els dominis, sense miraments
+
+        <ul>
+        {% for domain in dnsdomains %}
+            <li>{{ domain.domain.domain }}</li>
+        {% endfor %}
+        </ul>
+
+        <form action="{{ process_link }}" method="POST">
+            <p>Com ha de ser el registre DNS??</p>
+            <label>Name</label><input type="text" name="name" />
+            <label>Type</label>
+            <select name="type">
+                <option value='NS'>NS</option>
+                <option value='A'>A</option>
+                <option value='AAAA'>AAAA</option>
+                <option value='MX'>MX</option>
+                <option value='CNAME'>CNAME</option>
+                <option value='TXT'>TXT</option>
+                <option value='SRV'>SRV</option>
+                <option value='PTR'>PTR</option>
+                <option value='LOC'>LOC</option>
+                <option value='SSHFP'>SSHFP</option>
+                <option value='SPF'>SPF</option>
+                <option value='DKIM'>DKIM</option>
+                <option value='SOA'>SOA</option>
+            </select>
+            <label>Content</label><input type="text" name="content" />
+            <label>TTL</label><input type="text" name="ttl" />
+            <label>Prio</label><input type="text" name="prio" />
+            <input type="submit" value="Afegir registre NS a tots!!"/>
+        </form>
+    </body>
+</html>

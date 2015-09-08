@@ -1,0 +1,4 @@
+USER = "youruserhere"
+PASSWORD = "yourpasswordhere"
+DNSDOMAINSURL = "http://localhost:8000/api/dnsdomains/index.json"
+DNSRECORDCREATEURL = "http://localhost:8000/api/dnsrecords/create.json"
